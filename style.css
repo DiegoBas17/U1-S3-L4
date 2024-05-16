@@ -1,0 +1,17 @@
+
+.celleTabel {
+    border: solid 1px;
+    display: inline-block;
+    width: 12vw;
+}
+
+#sectionButton {
+    text-align: center;
+}
+
+section button {
+    text-align: center;
+    width: 10vw;
+    height: 5vh;
+    margin: auto;
+}
