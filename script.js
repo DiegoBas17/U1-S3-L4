@@ -3,6 +3,7 @@ const sectionTable = document.getElementById("tabel");
 const sectionButton = document.getElementById("sectionButton");
 
 const arrayCelle = [];
+const numeriEstratti = [];
 /* 1. creare una tabella da 76 celle, numerate da 1 a 76 */
 for (let index = 0; index <= 75; index++) {
   const cellaTabel = document.createElement("div");
@@ -24,11 +25,34 @@ buttonForExtraction.innerText = "Estrai un numero";
 sectionButton.appendChild(buttonForExtraction);
 
 buttonForExtraction.addEventListener("click", function (event) {
-  const randomNumber = Math.floor(Math.random() * 76) + 1;
-  console.log(randomNumber);
+  let randomNumber;
+
+  do {
+    randomNumber = Math.floor(Math.random() * 76) + 1;
+  } while (numeriEstratti.includes(randomNumber));
+
+  numeriEstratti.push(randomNumber);
+  /*   console.log(randomNumber); */
   /* 3. dopo il clik del bottone evidenzia la cella corrispondente al numero cambiando il coloro o il bordo*/
   arrayCelle[randomNumber - 1].classList.add("numeroEstratto");
 });
 
 /* 4. mantieni evidenziato le celle che sono state estratte in precedenza */
 /* non serve nessun istruzione poiche lascerò la classe attiva alle celle selezionate */
+
+const buttonForTabellina = document.createElement("button");
+const sectionTabellina = document.getElementById("sectionTabellina");
+sectionTabellina.appendChild(buttonForTabellina);
+buttonForTabellina.innerText = "Clicca qui per Ludopatia";
+
+/* creo eveto click per il tasto ludopatia */
+buttonForTabellina.addEventListener("click", function (event) {
+  for (let index = 0; index < 23; index++) {
+    const cellaForTabellina = document.createElement("div");
+    const numeroTabellina = document.createElement("h4");
+    sectionTabellina.appendChild(cellaForTabellina);
+    cellaForTabellina.appendChild(numeroTabellina);
+    let randomNumberForTabellina = Math.floor(Math.random() * 23) + 1;
+    numeroTabellina.innerText = randomNumberForTabellina;
+  }
+});
