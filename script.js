@@ -41,6 +41,7 @@ buttonForExtraction.addEventListener("click", function (event) {
 /* non serve nessun istruzione poiche lascerò la classe attiva alle celle selezionate */
 
 const buttonForTabellina = document.createElement("button");
+buttonForTabellina.classList.add("buttonTabellina");
 const sectionTabellina = document.getElementById("sectionTabellina");
 sectionTabellina.appendChild(buttonForTabellina);
 buttonForTabellina.innerText = "Clicca qui per Ludopatia";
@@ -49,6 +50,7 @@ buttonForTabellina.innerText = "Clicca qui per Ludopatia";
 buttonForTabellina.addEventListener("click", function (event) {
   for (let index = 0; index < 23; index++) {
     const cellaForTabellina = document.createElement("div");
+    cellaForTabellina.classList.add("cellaForTabellina");
     const numeroTabellina = document.createElement("h4");
     sectionTabellina.appendChild(cellaForTabellina);
     cellaForTabellina.appendChild(numeroTabellina);
