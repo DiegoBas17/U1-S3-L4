@@ -15,3 +15,7 @@ section button {
     height: 5vh;
     margin: auto;
 }
+
+.numeroEstratto {
+border: solid 3px;
+}
