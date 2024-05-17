@@ -29,6 +29,9 @@ buttonForExtraction.addEventListener("click", function (event) {
 
   do {
     randomNumber = Math.floor(Math.random() * 76) + 1;
+    if (numeriEstratti.length > 76) {
+      break;
+    }
   } while (numeriEstratti.includes(randomNumber));
 
   numeriEstratti.push(randomNumber);
